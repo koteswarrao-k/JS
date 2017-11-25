@@ -1,0 +1,92 @@
+function Car (desc) {
+ this.desc = desc;
+ this.color = "red";
+}
+Car.prototype = {
+ getInfo: function() {
+ return 'A ' + this.color + ' ' + this.desc + '.';
+ }
+};
+//instantiate object using the constructor function
+var car = Object.create(Car.prototype);
+car.color = "blue";
+alert(car.getInfo());
+undefined
+var obj = {};
+Object.defineProperties(obj, {
+ 'property1': {
+ value: true,
+ writable: true
+ },
+ 'property2': {
+ value: 'Hello',
+ writable: false
+ }
+// etc. etc.
+})
+{property1: true, property2: "Hello"}property1: trueproperty2: "Hello"__proto__: Object
+var obj1={};
+undefined
+obj1.defineProperty(a,{})
+VM224:1 Uncaught TypeError: obj1.defineProperty is not a function
+    at <anonymous>:1:6
+(anonymous) @ VM224:1
+obj1.defineProperty(a,{value:'koti'})
+VM226:1 Uncaught TypeError: obj1.defineProperty is not a function
+    at <anonymous>:1:6
+(anonymous) @ VM226:1
+Object.defineProperty(obj1,'a',{value:'koti'})
+{a: "koti"}
+var obj2={l:'koti'}
+undefined
+Ob
+VM269:1 Uncaught ReferenceError: Ob is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM269:1
+Object.entries(obj)
+[]
+Object.entries(obj2)
+[Array(2)]0: (2) ["l", "koti"]length: 1__proto__: Array(0)
+var obj3={l:'',n:'kk'};
+undefined
+obj3.keys(obj3);
+VM338:1 Uncaught TypeError: obj3.keys is not a function
+    at <anonymous>:1:6
+(anonymous) @ VM338:1
+Object.keys(obj3);
+(2) ["l", "n"]
+var obj4={b:'jj'}
+undefined
+var obj5=Object.assign({},obj4)
+undefined
+obj5
+{b: "jj"}
+var obj6={kk:'kkk'};
+undefined
+Object.isSealed(obj6);
+false
+Object.preventExtensions(obj6);
+{kk: "kkk"}
+Object.isSealed(obj6);
+false
+var empty = {};
+Object.isSealed(empty); // === false
+// If you make an empty object non-extensible,
+// it is vacuously sealed.
+Object.preventExtensions(empty);
+Object.isSealed(empty); // === true
+true
+var obj7={};
+undefined
+Object.preventExtensions(obj7);
+{}
+Object.isSealed(obj7);
+true
+var obj8={};
+undefined
+var obj8={k:'mmmm'};
+undefined
+Object.preventExtensions(obj8);
+{k: "mmmm"}
+Object.isSealed(obj8);
+false
